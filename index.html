@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fortune Teller Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div id="formPage" class="page active">
+        <div class="container">
+            <h1>Fortune Teller Form</h1>
+            <form id="funForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" required>
+
+                <label for="dob">Date of Birth (DD-MM-YYYY):</label>
+                <input type="date" id="dob" name="dob" required>
+                <span id="dobError" class="error"></span>
+
+                <label for="gender">Gender:</label>
+                <select id="gender" name="gender" required>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+
+                <label for="query">What do you want to know?</label>
+                <input type="text" id="query" name="query" required>
+
+                <button type="submit">Submit</button>
+            </form>
+
+            <video id="video" width="640" height="480" autoplay style="display:none;"></video>
+            <canvas id="canvas" width="640" height="480" style="display:none;"></canvas>
+            <audio id="audio" loop style="display:none;"></audio>
+        </div>
+    </div>
+
+    <div id="processingPage" class="page hidden">
+        <h2 id="loadingText">Checking your zodiac...</h2>
+        <div class="loader">
+            <div class="loader-circle"></div>
+            <span id="loader-percent">0%</span>
+        </div>
+    </div>
+
+    <div id="resultPage" class="page hidden">
+        <div id="result" class="result-container"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
